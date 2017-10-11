@@ -41,7 +41,7 @@ ls /dev/tty* | grep serial
 
 
 # Install the Arduino IDE
-Next thing you're goint to do is to Install the Arduino IDE. It's one possibility to develop code and run it on your WeMos (or any other Arduino compatible) board. Navigate to https://www.arduino.cc/en/Main/Software and download and install the Arduino IDE for your Operating System. You need to install the Board Firmware for your ESP8266 board in order to access and program it. 
+Next thing you're goint to do is to Install the Arduino IDE. It's one possibility to develop code and run it on your WeMos (or any other Arduino compatible) board. Download and install the Arduino IDE for your Operating System (https://www.arduino.cc/en/Main/Software). You need to install the Board Firmware for your ESP8266 board in order to access and program it. 
 
 1. Open "Arduino" - "Preferences"
 
