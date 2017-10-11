@@ -3,7 +3,7 @@ You'll install additional libraries that are needed in order to send and receive
 
 1. Open "Sketch" - "Include Library" - "Manage Libraries" in your Arduino IDE.
 
-![alt text](https://github.com/cvolkmer/iot-hackathon/blob/master/images/3_1_mqtt_library.png)
+<img src="https://github.com/cvolkmer/iot-hackathon/blob/master/images/3_1_mqtt_library.png" width="60%">
 
 2. Search for "adafruit mqtt" and install the "Adafruit MQTT Library".
 
