@@ -17,6 +17,6 @@ Have a look at the code to understand how it is structured.
 
 4. Once the Sketch is loaded, the LED on your WeMos board should blink!
 
-![alt text](https://github.com/cvolkmer/iot-hackathon/blob/master/images/2_4_arduino_ide_first_sketch.png)
+<img src="https://github.com/cvolkmer/iot-hackathon/blob/master/images/2_4_arduino_ide_first_sketch.png" width="70%">
 
 Try to change the values in the delay funtion and see what happens.
