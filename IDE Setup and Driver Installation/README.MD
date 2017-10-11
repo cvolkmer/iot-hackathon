@@ -1,1 +1,0 @@
-The board we're going to use is a WeMos D1 mini with an ESP8266. You can find all technical details about your board here: https://wiki.wemos.cc/products:d1:d1_mini . In order to make your board acessible from your System, you need to download the driver for you OS (https://wiki.wemos.cc/downloads). Go ahead and download and install the drivers on your system.
