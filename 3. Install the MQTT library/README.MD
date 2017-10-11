@@ -8,5 +8,3 @@ You'll install additional libraries that are needed in order to send and receive
 2. Search for "adafruit mqtt" and install the "Adafruit MQTT Library".
 
 ![alt text](https://github.com/cvolkmer/iot-hackathon/blob/master/images/3_2_mqtt_library.png)
-
-Try to change the values in the delay funtion and see what happens.
