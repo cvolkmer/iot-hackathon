@@ -37,7 +37,7 @@ The board we're going to use is a WeMos D1 mini with an ESP8266. You can find al
 ```bash
 ls /dev/tty* | grep serial
 ```
-<img src="https://github.com/cvolkmer/iot-hackathon/blob/master/images/1_9_install_driver_osx.png" width="40%">
+<img src="https://github.com/cvolkmer/iot-hackathon/blob/master/images/1_9_install_driver_osx.png" width="70%">
 
 # Install the Arduino IDE
 Next thing you're goint to do is to Install the Arduino IDE. It's one possibility to develop code and run it on your WeMos (or any other Arduino compatible) board. Download and install the Arduino IDE for your Operating System (https://www.arduino.cc/en/Main/Software). You need to install the Board Firmware for your ESP8266 board in order to access and program it. 
