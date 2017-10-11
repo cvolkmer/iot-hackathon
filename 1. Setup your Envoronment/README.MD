@@ -39,6 +39,7 @@ ls /dev/tty* | grep serial
 ```
 ![alt text](https://github.com/cvolkmer/iot-hackathon/blob/master/images/1_9_install_driver_osx.png "")
 
+
 # Install the Arduino IDE
 Next thing you're goint to do is to Install the Arduino IDE. It's one possibility to develop code and run it on your WeMos (or any other Arduino compatible) board. Navigate to https://www.arduino.cc/en/Main/Software and download and install the Arduino IDE for your Operating System. You need to install the Board Firmware for your ESP8266 board in order to access and program it. 
 
