@@ -16,7 +16,7 @@ Visit the Adafruit Website and create a free account https://io.adafruit.com/. A
 Adafruit uses the MQTT Protocol to exchange data. A Feed is an individual channel where devices can subscribe (receive) and publish (send) data. If you want to know more about MQTT you can read a brief introduction here (https://www.hivemq.com/blog/how-to-get-started-with-mqtt).
 
 # Connect Door-Sensor
-Now your're going to connect your Door-Sensor to your WeMos board. Connect your sensor to the following Pins (you can use other digital pins but you've to modify your Adruino Sketch accordingly) 
+Connect your sensor to the following Pins on your WeMos Board (you can use other digital pins but you've to modify your Adruino Sketch accordingly) 
 
 Fritzing Screenshot of Sensor Wiring!!
 
