@@ -20,7 +20,7 @@ Connect your sensor to the following Pins on your WeMos Board (you can use other
 
 Fritzing Screenshot of Sensor Wiring!!
 
-# Create a new Project in your Adaruit IDE
+# Create a new Project in your Arduino IDE
 Create an empty Sketch in your Arduino IDE and copy / paste the follwing Code
 Either provide Code here or provide Github Link!
 
