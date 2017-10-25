@@ -39,3 +39,9 @@ Serial.println(MYVAR);
 ```
 
 <img src="https://github.com/cvolkmer/iot-hackathon/blob/master/images/2_5_arduino_ide_serial_monitor.png">
+
+# Arduino Language Reference
+
+The Arduino programming language is merely a set of C/C++ functions that can be called from your code. The Arduino environment can be extended through the use of libraries, just like most programming platforms. Libraries provide extra functionality for use in sketches, e.g. working with hardware or manipulating data. To use a library in a sketch, select it from Sketch > Import Library. 
+
+The language reference can be found <a href="https://www.arduino.cc/en/Reference/HomePage">here</a> or by clicking Help-Reference in the Arduino IDE.
