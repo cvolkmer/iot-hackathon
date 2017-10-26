@@ -25,7 +25,7 @@ Try to change the values in the delay funtion and see what happens.
 
 The Arduino IDE has a feature that can be a great help in debugging sketches or controlling Arduino from your computer's keyboard.
 
-The Serial Monitor is a separate pop-up window that acts as a separate terminal that communicates by receiving and sending Serial Data. The serial monitor is available in the Arduino IDE under the tools menu.
+The Serial Monitor is a separate pop-up window that acts as a separate terminal that communicates by receiving and sending Serial Data. The serial monitor is available in the Arduino IDE under the tools menu. Set the baud rate in the serial console according your code!
 
 1. You must have an Arduino connected by USB to your computer to be able to activate the Serial Monitor
 2. You need to begin Serial Communications and set the Baud Rate (speed) that data will be transferred at in the setup function of your sketch.
@@ -44,7 +44,7 @@ int x = 0;
 
 void  setup()
 {
-  Serial.begin(9600);
+  Serial.begin(115200);
   Serial.println("Hello world");
   delay(2000);// Give reader a chance to see the output.
 }
