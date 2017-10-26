@@ -38,6 +38,26 @@ Serial.println("Output of my variable: ");
 Serial.println(MYVAR);
 ```
 
+Here an example to do some testing with the serial monitor:
+```
+int x = 0;
+
+void  setup()
+{
+  Serial.begin(9600);
+  Serial.println("Hello world");
+  delay(2000);// Give reader a chance to see the output.
+}
+
+
+void loop()
+{
+  Serial.println(x);
+  delay(500);
+  x=x+1;
+}
+```
+
 <img src="https://github.com/cvolkmer/iot-hackathon/blob/master/images/2_5_arduino_ide_serial_monitor.png">
 
 # Arduino Language Reference
