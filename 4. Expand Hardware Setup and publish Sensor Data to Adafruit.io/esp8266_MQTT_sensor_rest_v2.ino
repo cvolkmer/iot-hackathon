@@ -32,39 +32,36 @@
 
   Adafruit Example written by Tony DiCola for Adafruit Industries.
   MIT license, all text above must be included in any redistribution
- ****************************************************/
+ *****************************************************************************/
 
 #include <ESP8266WiFi.h>
 #include <ESP8266HTTPClient.h>
 #include "Adafruit_MQTT.h"
 #include "Adafruit_MQTT_Client.h"
 
-/************************* WiFi Access Point *********************************/
+/************************* Variable Setup ************************************/
 
-#define WLAN_SSID       "<YOURWLANSSID>"
-#define WLAN_PASS       "<YOURWLANPASSWORD>"
+#define WLAN_SSID       "<YOURWLANSSID>"        // Insert your WLAN SSID
+#define WLAN_PASS       "<YOURWLANPASSWORD>"    // Insert your WLAN Password
 
-/************************* Adafruit.io Setup *********************************/
+#define AIO_SERVER      "io.adafruit.com"       // Adafruit Service 
+#define AIO_SERVERPORT  1883                    // use 8883 for SSL
+#define AIO_USERNAME    "<YOURAIOUSER>"         // Insert your AIO Username
+#define AIO_KEY         "<YOURAIOAPIKEY>"       // Insert your AIO API Key
 
-#define AIO_SERVER      "io.adafruit.com"
-#define AIO_SERVERPORT  1883                   // use 8883 for SSL
-#define AIO_USERNAME    "<YOURAIOUSER>"
-#define AIO_KEY         "<YOURAIOAPIKEY>"
+#define MYSTROM         "<YOURMYSTROMIP"        // Insert the IP Adress of your myStrom WiFi Switch
 
-/************************* Variable Setup *********************************/
+/************************* Other Setup Variables *****************************/
 
-#define MYSTROM    "<YOURMYSTROMIP"
+int inputPin = D3;                              // pushbutton connected to digital pin D3
+int state = HIGH;                               // the current state of the output pin
 
-int inputPin = D3;        // pushbutton connected to digital pin D3
-int state = HIGH;         // the current state of the output pin
+long timestamp = 0;                             // the last time something has been published via MQTT 
 
-long timestamp = 0;       // the last time something has been published via MQTT 
+boolean interruptstate = false;                 // flag for interrupt by button
 
-boolean interruptstate = false;  // flag for interrupt by button
-
-unsigned long lastDebounceTime = 0; //last time the pin was toggled, used to keep track of time
-unsigned long debounceDelay = 50;   //the debounce time which user sets prior to run
-
+unsigned long lastDebounceTime = 0;             //last time the pin was toggled, used to keep track of time
+unsigned long debounceDelay = 50;               //the debounce time which user sets prior to run
 
 /************ Global State (you don't need to change this!) ******************/
 
