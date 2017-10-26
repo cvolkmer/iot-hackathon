@@ -30,3 +30,7 @@ Response
 ```
 You can use your browser or command line utililty to test the API.
 
+# Create a new Feed on Adafruit
+
+# Create a new Switch on Adafruit
+
