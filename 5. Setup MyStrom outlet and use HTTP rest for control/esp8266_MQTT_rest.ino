@@ -32,7 +32,7 @@
 
   Adafruit Example written by Tony DiCola for Adafruit Industries.
   MIT license, all text above must be included in any redistribution
- *****************************************************************************/
+ ****************************************************/
 
 #include <ESP8266WiFi.h>
 #include <ESP8266HTTPClient.h>
@@ -53,16 +53,6 @@
 
 /************************* Other Setup Variables *****************************/
 
-int inputPin = D3;                              // pushbutton connected to digital pin D3
-int state = HIGH;                               // the current state of the output pin
-
-long timestamp = 0;                             // the last time something has been published via MQTT 
-
-boolean interruptstate = false;                 // flag for interrupt by button
-
-unsigned long lastDebounceTime = 0;             //last time the pin was toggled, used to keep track of time
-unsigned long debounceDelay = 50;               //the debounce time which user sets prior to run
-
 /************ Global State (you don't need to change this!) ******************/
 
 // Create an ESP8266 WiFiClient class to connect to the MQTT server.
@@ -79,45 +69,19 @@ HTTPClient http;
 
 // Setup a feed called 'button' for publishing.
 // Notice MQTT paths for AIO follow the form: <username>/feeds/<feedname>
-Adafruit_MQTT_Publish button = Adafruit_MQTT_Publish(&mqtt, AIO_USERNAME "/feeds/button", MQTT_QOS_1);
 Adafruit_MQTT_Publish esp = Adafruit_MQTT_Publish(&mqtt, AIO_USERNAME "/feeds/esp", MQTT_QOS_1);
 
 // Setup a feed called 'relay' for subscribing to changes.
-Adafruit_MQTT_Subscribe relay = Adafruit_MQTT_Subscribe(&mqtt, AIO_USERNAME "/feeds/relay", MQTT_QOS_1);
+Adafruit_MQTT_Subscribe button = Adafruit_MQTT_Subscribe(&mqtt, AIO_USERNAME "/feeds/button", MQTT_QOS_1);
 
 /*************************** Sketch Code ************************************/
-
-void buttonChange() {  // function to be executed on interrupt (button on Pin D3)
-  static unsigned long last_interrupt_time = 0;
-  unsigned long interrupt_time = millis();
-  // If interrupts come faster than 300ms, assume it's a bounce and ignore. (what is switch bounce? see: https://www.allaboutcircuits.com/technical-articles/switch-bounce-how-to-deal-with-it/)
-  if (interrupt_time - last_interrupt_time > 300)
-  {
-    Serial.print(F("\n Button pressed "));
-    interruptstate = true; // setting flag to invoke MQTT publish in main loop
-  }
-  last_interrupt_time = interrupt_time;
-}
-
-void interruptAction() {
-  interruptstate = false; // resetting interrupt flag
-  Serial.print(F("\nSending button state "));
-  if (! button.publish("1")) {  // Now we can publish stuff!
-    Serial.println(F("Failed"));
-  } else {
-    Serial.println(F("OK!"));
-  }
-}
 
 void setup() {
   Serial.begin(115200);
   delay(10);
 
   pinMode(LED_BUILTIN, OUTPUT);  // set onboard LED as output (will be used for successful MQTT connection)
-  pinMode(inputPin, INPUT_PULLUP);  // set pin as input
-  attachInterrupt(digitalPinToInterrupt(inputPin), buttonChange, FALLING); // trigger interrupt on button click. Function buttonChange will be invoked.
-
-   digitalWrite(LED_BUILTIN, HIGH);  // sets the LED if MQTT is connected
+  digitalWrite(LED_BUILTIN, HIGH);  // sets the LED if MQTT is connected
   
   // Connect to WiFi access point.
   Serial.println(); Serial.println();
@@ -134,10 +98,10 @@ void setup() {
   Serial.println("IP address: "); Serial.println(WiFi.localIP());
 
   // Setup MQTT subscription for onoff feed.
-  mqtt.subscribe(&relay);
+  mqtt.subscribe(&button);
   
   Serial.println();
-  Serial.println("subscribing to MQTT relay feed");
+  Serial.println("subscribing to MQTT switch feed");
 }
 
 void loop() {
@@ -146,58 +110,38 @@ void loop() {
   // function definition further below.
   MQTT_connect();
 
-  // checking if returning from interrupt (buttonChange function)
-  if (interruptstate == true) {
-    interruptAction();
-  }
-
   Adafruit_MQTT_Subscribe *subscription;
   while ((subscription = mqtt.readSubscription(5000))) {  // this is our 'wait for incoming subscription packets' busy subloop
-    if (subscription == &relay) {
+    if (subscription == &button) {
       Serial.print(F("\nGot: "));
-      Serial.println((char *)relay.lastread);
+      Serial.println((char *)button.lastread);
 
-      if (strcmp((char *)relay.lastread, "ON") == 0)
+      if (strcmp((char *)button.lastread, "ON") == 0)
       {
-        http.begin(MYSTROM, 80, "/relay?state=1");
+        String url = "http://";
+        url += MYSTROM;
+        url += "/relay?state=1";
+        
+        http.begin(url);
         http.addHeader("Content-Type", "text/plain");
-        auto httpCode = http.GET();
+        int httpCode = http.GET();
+        http.end();
         Serial.print(F("\n Switching Relay ON"));
       }
 
-      if (strcmp((char *)relay.lastread, "OFF") == 0)
+      if (strcmp((char *)button.lastread, "OFF") == 0)
       {
-        http.begin(MYSTROM, 80, "/relay?state=0");
+        String url = "http://";
+        url += MYSTROM;
+        url += "/relay?state=0";
+        
+        http.begin(url);
         http.addHeader("Content-Type", "text/plain");
-        auto httpCode = http.GET();
+        int httpCode = http.GET();
+        http.end();
         Serial.print(F("\n Switching Relay OFF"));
       }
-
-      if (strcmp((char *)relay.lastread, "TOGGLE") == 0)
-      {
-        http.begin(MYSTROM, 80, "/toggle");
-        http.addHeader("Content-Type", "text/plain");
-        auto httpCode = http.GET();
-        Serial.print(F("\n Toggle Relay"));
-      }
     }
-  }
-
- // ping the server to keep the mqtt connection alive
- // NOT required if you are publishing once every KEEPALIVE (300) seconds
- // millis() = number of milliseconds since the program started 
-
-  if (millis() - timestamp > 240000)
-  {
-    Serial.print("\nSending MQTT ping");
-    if(! mqtt.ping()) {
-      mqtt.disconnect(); // disconnect from MQTT. Will connect automatically in the beginning of the loop
-      digitalWrite(LED_BUILTIN, HIGH);  // sets the LED if MQTT is connected
-  }
-    if (! esp.publish("ping")) {  // Now we can publish stuff!
-    Serial.println(F("Updating ESP state on MQTT"));
-  }
-    timestamp = millis();
   }
 }
 
