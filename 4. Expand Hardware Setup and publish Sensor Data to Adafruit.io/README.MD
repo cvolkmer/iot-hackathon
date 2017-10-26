@@ -36,10 +36,19 @@ You need to adjust the values in the "Variable Setup" Section:
 #define AIO_USERNAME    "<YOURAIOUSER>"         // Insert your AIO Username
 #define AIO_KEY         "<YOURAIOAPIKEY>"       // Insert your AIO API Key
 
-#define MYSTROM    "<YOURMYSTROMIP"             // Insert the IP Adress of your myStrom WiFi Switch
+#define MYSTROM         "<YOURMYSTROMIP"        // Insert the IP Adress of your myStrom WiFi Switch
 
 /************************* Other Setup Variables *****************************/
 ````
+Upload your Sketch to your WeMos and open the serial console to debug the output. Your WeMos should have joined the local WLAN and established a connection with Adafuit. If you open or close the door sensor you should see appropriate values "0" and "1" logged in the serial console.
+
+Screenshot Serial Console
+
+If you login to Adafruit and navigate to your feed, you should see the same values published like in the serial console.
+
+Screenshot Adafruit Feed
+
+
 
 # Publish Sensor Data to Adafruit
 Modify Code with WLAN, API Key, Feed, Serial Troubleshooting Sensor Data, Verify Data arrives at Adafruit
