@@ -21,8 +21,7 @@ Connect your sensor to the following Pins on your WeMos Board. In the Arduino Sk
 <img src="https://github.com/cvolkmer/iot-hackathon/blob/master/images/4_3_wemos_sensor_cabling.png" width="50%">
 
 # Create a new Project in your Arduino IDE
-Create an empty Sketch in your Arduino IDE and copy / paste the follwing Code
-Either provide Code here or provide Github Link!
+Create an empty Sketch in your Arduino IDE and copy / paste the follwing code from here: https://github.com/cvolkmer/iot-hackathon/blob/master/4.%20Expand%20Hardware%20Setup%20and%20publish%20Sensor%20Data%20to%20Adafruit.io/esp8266_MQTT_sensor_rest_v2.ino
 
 # Publish Sensor Data to Adafruit
 Modify Code with WLAN, API Key, Feed, Serial Troubleshooting Sensor Data, Verify Data arrives at Adafruit
