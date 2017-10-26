@@ -18,7 +18,7 @@ Adafruit uses the MQTT Protocol and provides an MQTT broker to exchange data. A 
 # Connect Door-Sensor
 Connect your sensor to the following Pins on your WeMos Board (you can use other digital pins but you've to modify your Adruino Sketch accordingly) 
 
-Fritzing Screenshot of Sensor Wiring!!
+<img src="https://github.com/cvolkmer/iot-hackathon/blob/master/images/4_3_wemos_sensor_cabling.png" width="70%">
 
 # Create a new Project in your Arduino IDE
 Create an empty Sketch in your Arduino IDE and copy / paste the follwing Code
