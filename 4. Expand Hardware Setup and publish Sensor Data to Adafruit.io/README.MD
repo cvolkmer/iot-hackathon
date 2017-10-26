@@ -23,5 +23,23 @@ Connect your sensor to the following Pins on your WeMos Board. In the Arduino Sk
 # Create a new Project in your Arduino IDE
 Create an empty Sketch in your Arduino IDE and copy / paste the follwing code from here: https://github.com/cvolkmer/iot-hackathon/blob/master/4.%20Expand%20Hardware%20Setup%20and%20publish%20Sensor%20Data%20to%20Adafruit.io/esp8266_MQTT_sensor_rest_v2.ino
 
+You need to adjust the values in the "Variable Setup" Section
+
+````
+/************************* Variable Setup ************************************/
+
+#define WLAN_SSID       "<YOURWLANSSID>"        // Insert your WLAN SSID
+#define WLAN_PASS       "<YOURWLANPASSWORD>"    // Insert your WLAN Password
+
+#define AIO_SERVER      "io.adafruit.com"       // Adafruit Service 
+#define AIO_SERVERPORT  1883                    // use 8883 for SSL
+#define AIO_USERNAME    "<YOURAIOUSER>"         // Insert your AIO Username
+#define AIO_KEY         "<YOURAIOAPIKEY>"       // Insert your AIO API Key
+
+#define MYSTROM    "<YOURMYSTROMIP"             // Insert the IP Adress of your myStrom WiFi Switch
+
+/************************* Other Setup Variables *****************************/
+````
+
 # Publish Sensor Data to Adafruit
 Modify Code with WLAN, API Key, Feed, Serial Troubleshooting Sensor Data, Verify Data arrives at Adafruit
