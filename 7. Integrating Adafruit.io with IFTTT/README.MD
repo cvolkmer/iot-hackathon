@@ -1,10 +1,3 @@
-# Create new Adafruit Feed
-
-# Create Adafruit Switch
-
-# Arduino Code & Subscribe to new Feed
-
-# Control sweitch from Adafruit
 
 # Create an IFTTT Account
 Visit the IFTTT website (https://ifttt.com/join) and signup for a new account.
@@ -14,4 +7,3 @@ Visit the IFTTT website (https://ifttt.com/join) and signup for a new account.
 # Create your IFTTT Recipe
 Notification on Door movement
 Mystrom switch on sunrise and off on 23:00
-
