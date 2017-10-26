@@ -1,9 +1,8 @@
 # Create an IFTTT Account
-bla
-bli
+Visit the IFTTT website (https://ifttt.com/join) and signup for a new account.
 
 # Add Adafruit, Weather and Notification Channel to your IFTTT Account
-bli
+
 
 # Create your IFTTT Recipe
 Notification on Door movement
