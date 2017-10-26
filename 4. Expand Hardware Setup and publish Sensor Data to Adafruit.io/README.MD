@@ -16,9 +16,9 @@ Visit the Adafruit Website and create a free account https://io.adafruit.com/. A
 Adafruit uses the MQTT Protocol and provides an MQTT broker to exchange data. A Feed is an individual channel where devices can subscribe (receive) and publish (send) data. If you want to know more about MQTT you can read a brief introduction here (https://www.hivemq.com/blog/how-to-get-started-with-mqtt).
 
 # Connect Door-Sensor
-Connect your sensor to the following Pins on your WeMos Board (you can use other digital pins but you've to modify your Adruino Sketch accordingly) 
+Connect your sensor to the following Pins on your WeMos Board. In the Arduino Sketch we're using Pin D3 + GND for the connection. You can use another digital input but you've to modify your Adruino Sketch accordingly. 
 
-<img src="https://github.com/cvolkmer/iot-hackathon/blob/master/images/4_3_wemos_sensor_cabling.png" width="70%">
+<img src="https://github.com/cvolkmer/iot-hackathon/blob/master/images/4_3_wemos_sensor_cabling.png" width="50%">
 
 # Create a new Project in your Arduino IDE
 Create an empty Sketch in your Arduino IDE and copy / paste the follwing Code
