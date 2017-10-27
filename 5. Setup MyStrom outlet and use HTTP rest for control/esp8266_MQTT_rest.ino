@@ -55,12 +55,8 @@
  HTTPClient http;
  
  /****************************** Feeds ***************************************/
- 
- // Setup a feed called 'button' for publishing.
- // Notice MQTT paths for AIO follow the form: <username>/feeds/<feedname>
- // Adafruit_MQTT_Publish esp = Adafruit_MQTT_Publish(&mqtt, AIO_USERNAME "/feeds/esp", MQTT_QOS_1);
- 
- // Setup a feed called 'relay' for subscribing to changes.
+  
+ // Setup a feed called 'wifiswitch' for subscribing to changes.
  Adafruit_MQTT_Subscribe wifiswitch = Adafruit_MQTT_Subscribe(&mqtt, AIO_USERNAME "/feeds/wifiswitch", MQTT_QOS_1);
  
  /*************************** Sketch Code ************************************/
@@ -161,8 +157,5 @@
         }
    }
    Serial.println("MQTT Connected!");
-   if (! esp.publish("connected")) {  // Now we can publish stuff!
-     Serial.println(F("Updating ESP state on MQTT"));
-   }
    digitalWrite(LED_BUILTIN, LOW);  // sets the LED if MQTT is connected
  }
