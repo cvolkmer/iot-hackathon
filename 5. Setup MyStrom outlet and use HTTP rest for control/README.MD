@@ -26,3 +26,24 @@ Response
 [IP] – IP Address of your Switch e.g. 192.168.1.99
 ```
 Use your browser to test the API calls and discover their functionality.
+
+# Receive input from Adafruit via MQTT
+Create an empty sketch in your Arduino IDE and copy / paste the follwing code provided in this section (esp8266_MQTT_rest.ino) 
+
+You need to adjust the values in the "Variable Setup" Section:
+
+````
+/************************* Variable Setup ************************************/
+
+#define WLAN_SSID       "<YOURWLANSSID>"        // Insert your WLAN SSID
+#define WLAN_PASS       "<YOURWLANPASSWORD>"    // Insert your WLAN Password
+
+#define AIO_SERVER      "io.adafruit.com"       // Adafruit Service 
+#define AIO_SERVERPORT  1883                    // use 8883 for SSL
+#define AIO_USERNAME    "<YOURAIOUSER>"         // Insert your AIO Username
+#define AIO_KEY         "<YOURAIOAPIKEY>"       // Insert your AIO API Key
+
+#define MYSTROM         "<YOURMYSTROMIP"        // Insert the IP Adress of your myStrom WiFi Switch
+
+/************************* Other Setup Variables *****************************/
+````
