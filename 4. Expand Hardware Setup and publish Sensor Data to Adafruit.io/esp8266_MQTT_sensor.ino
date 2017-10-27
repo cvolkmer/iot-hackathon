@@ -150,7 +150,7 @@ void MQTT_connect() {
     }
   }
   Serial.println("MQTT Connected!");
-  if (! wifiswitch.publish("connected")) {  // Now we can publish stuff!
-    Serial.println(F("Updating Wifi Switch state on MQTT"));
+  if (! door.publish("connected")) {  // Now we can publish stuff!
+    Serial.println(F("Updating Door state on MQTT"));
   }
 }
