@@ -64,5 +64,7 @@ Select the "wifiswitch" Feed.
 You can edit the title and click "Create block" to crete a switch item on your dashboard
 <img src="https://github.com/cvolkmer/iot-hackathon/blob/master/images/5_5_create_new_dashboard.png" width="90%">
 
-Toggle the widget on-off and see what happens with your WiFi Switch! For debugging purposes you can add aditional blocks like a text block. This allows you to see what data is being send to or from Adafruit. Add a text widget to your dashboard. Try out other widgets as well if you want.
+Toggle the widget on-off and see what happens with your WiFi Switch! You are now able to control your WiFi Switch over the Internet. 
 <img src="https://github.com/cvolkmer/iot-hackathon/blob/master/images/5_6_create_new_dashboard.png" width="60%">
+
+For debugging purposes you can add aditional blocks like a text block. This allows you to see what data is being send to or from Adafruit. Add a text widget to your dashboard. Try out other widgets as well if you want. In the next chapter, you'll bring the send and receive use cases together. Have a look at his code because you have to deal with some special behaviour.
