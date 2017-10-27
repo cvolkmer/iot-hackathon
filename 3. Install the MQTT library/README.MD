@@ -5,6 +5,9 @@ MQTT is the defacto standard the exchange information for IOT devices. It uses a
 
 A very good explanation why MQTT is needed can be found <a href="https://learn.adafruit.com/mqtt-adafruit-io-and-you/why-mqtt?view=all#why-mqtt">here</a>.
 
+#What is Adafruit.io?
+Adafruit in generall is a manufaturer / broker of microcontrollers. They've built an own IoT communications platform (Adafruit.io) to interact with devices over the internet. There are certainly a lot of great services out there for datalogging, or communicating with your microcontroller over the web, but Adafruit.io is very easy and simple to get started. It is free of charge with a basic plan (absolutely sufficient for your use case).
+
 # Install the MQTT Library
 By integrating additional libraries in your code, you're able to extend the functionality of your device. To send and receive messages to/from an MQTT message broker, we have to install that library.
 

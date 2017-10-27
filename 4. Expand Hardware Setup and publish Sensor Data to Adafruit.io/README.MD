@@ -1,5 +1,5 @@
 # Load the new project
-This chapter will be interesting because you'll build a specific use case. Your WeMos will be connected to the Internet and publish sensor data to an IoT Platform. The following things need to be setup in order to do that.
+After your first experience with Arduino, you'll build a specific use case. Your WeMos will be connected to the Internet and publish sensor data to an IoT Platform. The following things need to be setup in order to do that.
 
 1. Create an Adafruit Account
 2. Connect your Door-Sensor
