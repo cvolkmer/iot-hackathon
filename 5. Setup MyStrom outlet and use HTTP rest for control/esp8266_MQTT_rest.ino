@@ -69,10 +69,10 @@ HTTPClient http;
 
 // Setup a feed called 'button' for publishing.
 // Notice MQTT paths for AIO follow the form: <username>/feeds/<feedname>
-Adafruit_MQTT_Publish esp = Adafruit_MQTT_Publish(&mqtt, AIO_USERNAME "/feeds/esp", MQTT_QOS_1);
+Adafruit_MQTT_Publish esp = Adafruit_MQTT_Publish(&mqtt, AIO_USERNAME "/feeds/wifiswitch", MQTT_QOS_1);
 
 // Setup a feed called 'relay' for subscribing to changes.
-Adafruit_MQTT_Subscribe button = Adafruit_MQTT_Subscribe(&mqtt, AIO_USERNAME "/feeds/button", MQTT_QOS_1);
+Adafruit_MQTT_Subscribe button = Adafruit_MQTT_Subscribe(&mqtt, AIO_USERNAME "/feeds/doorsensor", MQTT_QOS_1);
 
 /*************************** Sketch Code ************************************/
 
