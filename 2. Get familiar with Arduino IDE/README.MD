@@ -28,7 +28,8 @@ The Arduino IDE has a feature that can be a great help in debugging sketches or 
 The Serial Monitor is a separate pop-up window that acts as a separate terminal that communicates by receiving and sending Serial Data. The serial monitor is available in the Arduino IDE under the tools menu. Set the baud rate in the serial console according your code!
 
 1. You must have an Arduino connected by USB to your computer to be able to activate the Serial Monitor
-2. You need to begin Serial Communications and set the Baud Rate (speed) that data will be transferred at in the setup function of your sketch.
+2. You need to begin serial communications and set the baud rate (speed) that data will be transferred at in the setup function of your sketch. To try that out open a new, empty sketch and copy / paste the code below. You need to save, complie and upload it to your WeMos.
+ 
 ```
 Serial.begin(9600); // Other baud rates can be used... For ESP8266 115200 is working fine.
 ```
