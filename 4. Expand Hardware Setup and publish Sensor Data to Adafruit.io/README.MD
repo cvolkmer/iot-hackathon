@@ -43,7 +43,7 @@ You need to adjust the values in the "Variable Setup" Section:
 # Publish Sensor Data to Adafruit
 Upload your Sketch to your WeMos and open the serial console to debug the output. Your WeMos should have joined the local WLAN and established a connection with Adafuit. If you open or close the door sensor you should see appropriate values "0" and "1" logged in the serial console.
 
-<img src="https://github.com/cvolkmer/iot-hackathon/blob/master/images/4_4_sketch_serial_output.png" width="40%">
+<img src="https://github.com/cvolkmer/iot-hackathon/blob/master/images/4_4_sketch_serial_output.png" width="70%">
 
 If you login to Adafruit and navigate to your feed, you should see the same values published like in the serial console.
 
