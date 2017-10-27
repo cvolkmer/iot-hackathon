@@ -11,6 +11,8 @@ Visit the Adafruit Website and create a free account https://io.adafruit.com/. A
 
 <img src="https://github.com/cvolkmer/iot-hackathon/blob/master/images/4_1_adafruit_create_sensor_feed.png" width="70%">
 
+The two feeds ("doorsensor" and "wifiswitch" are used in code examples. Create these two feeds now. You can choose different feed names, but you've to modify your code accordingly to make it work.
+
 <img src="https://github.com/cvolkmer/iot-hackathon/blob/master/images/4_2_adafruit_create_sensor_feed.png" width="50%">
 
 Adafruit uses the MQTT Protocol and provides an MQTT broker to exchange data. A Feed is an individual channel where devices can subscribe (receive) and publish (send) data. If you want to know more about MQTT you can read a brief introduction here (https://www.hivemq.com/blog/how-to-get-started-with-mqtt).
