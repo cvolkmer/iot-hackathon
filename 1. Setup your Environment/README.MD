@@ -33,6 +33,7 @@ ls /dev/tty* | grep serial
 <img src="https://github.com/cvolkmer/iot-hackathon/blob/master/images/1_9_install_driver_osx.png" width="70%">
 
 
+
 # Driver setup on Windows
 1. Double click the "CH341SER.exe" to start the driver installation
 
@@ -41,7 +42,7 @@ ls /dev/tty* | grep serial
 <img src="https://github.com/cvolkmer/iot-hackathon/blob/master/images/1_2_install_driver_win.png" width="50%">
 
 2. Use the device manager to find your ESP8266 board in Windows:
-<img src="https://github.com/cvolkmer/iot-hackathon/blob/master/images/1_9_install_driver_win.png" width="50%">
+<img src="https://github.com/cvolkmer/iot-hackathon/blob/master/images/1_3_install_driver_win.png" width="50%">
 
 
 # Install the Arduino IDE
