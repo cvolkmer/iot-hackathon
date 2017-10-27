@@ -27,7 +27,7 @@ Response
 ```
 Use your browser to test the API calls and discover their functionality.
 
-# Receive input from Adafruit via MQTT
+# Create a new Project in your Arduino IDE
 Create an empty sketch in your Arduino IDE and copy / paste the follwing code provided in this section (esp8266_MQTT_rest.ino) 
 
 You need to adjust the values in the "Variable Setup" Section:
@@ -45,5 +45,6 @@ You need to adjust the values in the "Variable Setup" Section:
 
 #define MYSTROM         "<YOURMYSTROMIP"        // Insert the IP Adress of your myStrom WiFi Switch
 
-/************************* Other Setup Variables *****************************/
 ````
+
+# Receive input from Adafruit via MQTT
