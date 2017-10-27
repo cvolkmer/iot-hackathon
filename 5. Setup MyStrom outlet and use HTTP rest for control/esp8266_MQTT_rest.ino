@@ -76,7 +76,7 @@ HTTPClient http;
 
 // Setup a feed called 'button' for publishing.
 // Notice MQTT paths for AIO follow the form: <username>/feeds/<feedname>
-Adafruit_MQTT_Publish door = Adafruit_MQTT_Publish(&mqtt, AIO_USERNAME "/feeds/doorsensor", MQTT_QOS_1);
+//Adafruit_MQTT_Publish door = Adafruit_MQTT_Publish(&mqtt, AIO_USERNAME "/feeds/doorsensor", MQTT_QOS_1);
 Adafruit_MQTT_Subscribe wifiswitch = Adafruit_MQTT_Publish(&mqtt, AIO_USERNAME "/feeds/wifiswitch", MQTT_QOS_1);
 
 
@@ -179,8 +179,9 @@ void MQTT_connect() {
        }
   }
   Serial.println("MQTT Connected!");
-  if (! door.publish("connected")) {  // Now we can publish stuff!
-    Serial.println(F("Updating Door state on MQTT"));
+Adafruit_MQTT_Subscribe wifiswitch = Adafruit_MQTT_Publish(&mqtt, AIO_USERNAME "/feeds/wifiswitch", MQTT_QOS_1);
+  if (! wifiswitch.publish("connected")) {  // Now we can publish stuff!
+    Serial.println(F("Updating WiFi Switch state on MQTT"));
   }
   digitalWrite(LED_BUILTIN, LOW);  // sets the LED if MQTT is connected
 }
