@@ -66,7 +66,6 @@ Adafruit_MQTT_Client mqtt(&client, AIO_SERVER, AIO_SERVERPORT, AIO_USERNAME, AIO
 // Setup a feed called 'button' for publishing.
 // Notice MQTT paths for AIO follow the form: <username>/feeds/<feedname>
 Adafruit_MQTT_Publish door = Adafruit_MQTT_Publish(&mqtt, AIO_USERNAME "/feeds/doorsensor", MQTT_QOS_1);
-Adafruit_MQTT_Publish wifiswitch = Adafruit_MQTT_Publish(&mqtt, AIO_USERNAME "/feeds/wifiswitch", MQTT_QOS_1);
 
 /*************************** Sketch Code ************************************/
 
