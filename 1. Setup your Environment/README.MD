@@ -30,7 +30,7 @@ The board we're going to use is a WeMos D1 mini with an ESP8266. You can find al
 ```bash
 ls /dev/tty* | grep serial
 ```
-<img src="https://github.com/cvolkmer/iot-hackathon/blob/master/images/1_9_install_driver_osx.png" width="70%">
+<img src="https://github.com/cvolkmer/iot-hackathon/blob/master/images/1_9_install_driver_osx.png" width="50%">
  
  
 # Driver setup on Windows
