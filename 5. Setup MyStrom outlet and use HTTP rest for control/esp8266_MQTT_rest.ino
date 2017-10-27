@@ -74,6 +74,13 @@ Adafruit_MQTT_Publish esp = Adafruit_MQTT_Publish(&mqtt, AIO_USERNAME "/feeds/wi
 // Setup a feed called 'relay' for subscribing to changes.
 Adafruit_MQTT_Subscribe button = Adafruit_MQTT_Subscribe(&mqtt, AIO_USERNAME "/feeds/doorsensor", MQTT_QOS_1);
 
+// Setup a feed called 'button' for publishing.
+// Notice MQTT paths for AIO follow the form: <username>/feeds/<feedname>
+Adafruit_MQTT_Publish door = Adafruit_MQTT_Publish(&mqtt, AIO_USERNAME "/feeds/doorsensor", MQTT_QOS_1);
+Adafruit_MQTT_Publish wifiswitch = Adafruit_MQTT_Publish(&mqtt, AIO_USERNAME "/feeds/wifiswitch", MQTT_QOS_1);
+
+
+
 /*************************** Sketch Code ************************************/
 
 void setup() {
@@ -98,7 +105,7 @@ void setup() {
   Serial.println("IP address: "); Serial.println(WiFi.localIP());
 
   // Setup MQTT subscription for onoff feed.
-  mqtt.subscribe(&button);
+  mqtt.subscribe(&wifiswitch);
   
   Serial.println();
   Serial.println("subscribing to MQTT switch feed");
@@ -112,11 +119,11 @@ void loop() {
 
   Adafruit_MQTT_Subscribe *subscription;
   while ((subscription = mqtt.readSubscription(5000))) {  // this is our 'wait for incoming subscription packets' busy subloop
-    if (subscription == &button) {
+    if (subscription == &wifiswitch) {
       Serial.print(F("\nGot: "));
-      Serial.println((char *)button.lastread);
+      Serial.println((char *)wifiswitch.lastread);
 
-      if (strcmp((char *)button.lastread, "ON") == 0)
+      if (strcmp((char *)wifiswitch.lastread, "ON") == 0)
       {
         String url = "http://";
         url += MYSTROM;
@@ -129,7 +136,7 @@ void loop() {
         Serial.print(F("\n Switching Relay ON"));
       }
 
-      if (strcmp((char *)button.lastread, "OFF") == 0)
+      if (strcmp((char *)wifiswitch.lastread, "OFF") == 0)
       {
         String url = "http://";
         url += MYSTROM;
@@ -172,8 +179,8 @@ void MQTT_connect() {
        }
   }
   Serial.println("MQTT Connected!");
-  if (! esp.publish("connected")) {  // Now we can publish stuff!
-    Serial.println(F("Updating ESP state on MQTT"));
+  if (! door.publish("connected")) {  // Now we can publish stuff!
+    Serial.println(F("Updating Door state on MQTT"));
   }
   digitalWrite(LED_BUILTIN, LOW);  // sets the LED if MQTT is connected
 }
