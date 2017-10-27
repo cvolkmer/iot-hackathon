@@ -9,7 +9,7 @@ After your first experience with Arduino, you'll build a specific use case. Your
 # Create an Adafruit Account
 Visit the Adafruit Website and create a free account https://io.adafruit.com/. Adafruit provides a free or charge IoT Service to get started easily with your project. To send and receive data between Adafruit and your WeMos it's best to define dedicated message Feeds. It's not mandatory but it makes sense because we're having two different use cases (send sensor data to Adafruit and receiving data to control your Wireless Switch). To so so Click on "Feeds" => "Acions" => and "Create a New Feed".
 
-<img src="https://github.com/cvolkmer/iot-hackathon/blob/master/images/4_1_adafruit_create_sensor_feed.png" width="70%">
+<img src="https://github.com/cvolkmer/iot-hackathon/blob/master/images/4_1_adafruit_create_sensor_feed.png" width="90%">
 
 The two feeds ("doorsensor" and "wifiswitch" are used in code examples. Create these two feeds now. You can choose different feed names, but you've to modify your code accordingly to make it work.
 
@@ -47,4 +47,4 @@ Upload your Sketch to your WeMos and open the serial console to debug the output
 
 If you login to Adafruit and navigate to your feed, you should see the same values published like in the serial console.
 
-<img src="https://github.com/cvolkmer/iot-hackathon/blob/master/images/4_5_adafruit_feed_log.png" width="70%">
+<img src="https://github.com/cvolkmer/iot-hackathon/blob/master/images/4_5_adafruit_feed_log.png" width="90%">
