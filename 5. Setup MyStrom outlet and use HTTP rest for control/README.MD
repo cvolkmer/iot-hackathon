@@ -55,7 +55,7 @@ We now want to send data to your WiFi Switch via Adafruit. The easiest way to do
 Open the empty dashboard and add a widget (block)
 <img src="https://github.com/cvolkmer/iot-hackathon/blob/master/images/5_2_create_new_dashboard.png" width="90%">
 
-Have a look at the widgets which are available. Since we want to control our WiFi Switch, select the switch (on-off) widget in the top left corner.
+Have a look at the widgets which are available. Since we want to control our WiFi Switch, select the toggle (on-off) widget in the top left corner.
 <img src="https://github.com/cvolkmer/iot-hackathon/blob/master/images/5_3_create_new_dashboard.png" width="90%">
 
 Select the "wifiswitch" Feed.
