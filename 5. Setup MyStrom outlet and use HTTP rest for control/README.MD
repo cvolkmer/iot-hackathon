@@ -48,3 +48,18 @@ You need to adjust the values in the "Variable Setup" Section:
 ````
 
 # Receive input from Adafruit via MQTT
+We now want to send data to your WiFi Switch via Adafruit. The easiest way to do that is by creating a dashboard with an interactive switch. Navigate to "Dashboards" in your Adafruit console and cllick on "Actions" => "Create a new Dashboard". Provide a name and hit "Create".
+
+<img src="https://github.com/cvolkmer/iot-hackathon/blob/master/images/5_1_create_new_dashboard.png" width="90%">
+
+Open the empty dashboard and add a widget (block)
+<img src="https://github.com/cvolkmer/iot-hackathon/blob/master/images/5_2_create_new_dashboard.png" width="90%">
+
+Have a look at the widgets which are available. Since we want to control our WiFi Switch, select the switch (on-off) widget in the top left corner.
+<img src="https://github.com/cvolkmer/iot-hackathon/blob/master/images/5_3_create_new_dashboard.png" width="90%">
+
+Select the "wifiswitch" Feed.
+<img src="https://github.com/cvolkmer/iot-hackathon/blob/master/images/5_4_create_new_dashboard.png" width="90%">
+
+You can edit the title and click "Create block"
+<img src="https://github.com/cvolkmer/iot-hackathon/blob/master/images/5_5_create_new_dashboard.png" width="90%">
