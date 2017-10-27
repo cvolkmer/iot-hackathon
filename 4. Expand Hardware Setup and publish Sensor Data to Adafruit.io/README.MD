@@ -15,8 +15,6 @@ The two feeds ("doorsensor" and "wifiswitch" are used in code examples. Create t
 
 <img src="https://github.com/cvolkmer/iot-hackathon/blob/master/images/4_2_adafruit_create_sensor_feed.png" width="50%">
 
-Adafruit uses the MQTT Protocol and provides an MQTT broker to exchange data. A Feed is an individual channel where devices can subscribe (receive) and publish (send) data. If you want to know more about MQTT you can read a brief introduction here (https://www.hivemq.com/blog/how-to-get-started-with-mqtt).
-
 # Connect Door-Sensor
 Connect your sensor to the following Pins on your WeMos Board. In the Arduino Sketch we're using Pin D3 + GND for the connection. You can use another digital input but you've to modify your Adruino Sketch accordingly. 
 
@@ -45,8 +43,8 @@ You need to adjust the values in the "Variable Setup" Section:
 # Publish Sensor Data to Adafruit
 Upload your Sketch to your WeMos and open the serial console to debug the output. Your WeMos should have joined the local WLAN and established a connection with Adafuit. If you open or close the door sensor you should see appropriate values "0" and "1" logged in the serial console.
 
-Screenshot Serial Console
+<img src="https://github.com/cvolkmer/iot-hackathon/blob/master/images/4_4_sketch_serial_output.png" width="40%">
 
 If you login to Adafruit and navigate to your feed, you should see the same values published like in the serial console.
 
-Screenshot Adafruit Feed
+<img src="https://github.com/cvolkmer/iot-hackathon/blob/master/images/4_5_adafruit_feed_log.png" width="70%">
