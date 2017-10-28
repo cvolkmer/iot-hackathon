@@ -25,7 +25,7 @@ The sketch is basically the code from the two examples in chapter 4 and 5. It al
 
 <img src="https://github.com/cvolkmer/iot-hackathon/blob/master/images/6_1_Serial_Console.png">
 
-# Create a new Project in your Arduino IDE
+# Get the merged project in play
 Create an empty sketch in your Arduino IDE and copy / paste the follwing code provided in this section (<a href="https://github.com/cvolkmer/iot-hackathon/blob/master/6.%20Bringing%20it%20all%20together%20-%20MQTT%20publish%20and%20subscribe/esp8266_MQTT_sensor_rest.ino">esp8266_MQTT_sensor_rest.ino</a>) 
 
 You need to adjust the values in the "Variable Setup" Section:
