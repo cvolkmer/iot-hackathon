@@ -53,5 +53,5 @@ MQTT clients like mqttool can be used to subscribe to the door feed. Find the de
 
 Use your username and AIO-Key as password to connect. The feeds at io.adafruit.com are starting with the username.
 
-<img src="https://github.com/cvolkmer/iot-hackathon/blob/master/images/4_6_mqttclient1.png" width="70%">
-<img src="https://github.com/cvolkmer/iot-hackathon/blob/master/images/4_6_mqttclient2.png" width="70%">
+<img src="https://github.com/cvolkmer/iot-hackathon/blob/master/images/4_6_mqttclient1.png" width="40%">
+<img src="https://github.com/cvolkmer/iot-hackathon/blob/master/images/4_6_mqttclient2.png" width="40%">
