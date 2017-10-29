@@ -47,3 +47,11 @@ If you login to Adafruit and navigate to your feed, you should see the same valu
 <img src="https://github.com/cvolkmer/iot-hackathon/blob/master/images/4_5_adafruit_feed_log.png" width="90%">
 
 You have now successfully published states from your door sensor to Adafruit via MQTT. This used case covered the publish portion when using MQTT. In the next chapter, you will use code which does the opposite. Your WeMo will subscribe to a message feed and wait for input to be executed.
+
+# Connect with an MQTT client to the door feed
+MQTT clients like mqttool can be used to subscribe to the door feed. Find the details <a href="https://learn.adafruit.com/adafruit-io/mqtt-api">here</a>.
+
+Use your username and AIO-Key as password to connect. The feeds at io.adafruit.com are starting with the username.
+
+<img src="https://github.com/cvolkmer/iot-hackathon/blob/master/images/4_6_mqttclient1.png" width="40%">
+<img src="https://github.com/cvolkmer/iot-hackathon/blob/master/images/4_6_mqttclient2.png" width="40%">
