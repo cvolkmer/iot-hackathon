@@ -79,11 +79,10 @@ HTTPClient http;
 
 // Setup a feed called 'button' for publishing.
 // Notice MQTT paths for AIO follow the form: <username>/feeds/<feedname>
-Adafruit_MQTT_Publish door = Adafruit_MQTT_Publish(&mqtt, AIO_USERNAME "/feeds/door", MQTT_QOS_1);
-Adafruit_MQTT_Publish esp = Adafruit_MQTT_Publish(&mqtt, AIO_USERNAME "/feeds/esp", MQTT_QOS_1);
+Adafruit_MQTT_Publish door = Adafruit_MQTT_Publish(&mqtt, AIO_USERNAME "/feeds/doorsensor", MQTT_QOS_1);
 
 // Setup a feed called 'relay' for subscribing to changes.
-Adafruit_MQTT_Subscribe button = Adafruit_MQTT_Subscribe(&mqtt, AIO_USERNAME "/feeds/button", MQTT_QOS_1);
+Adafruit_MQTT_Subscribe button = Adafruit_MQTT_Subscribe(&mqtt, AIO_USERNAME "/feeds/wifiswitch", MQTT_QOS_1);
 
 /*************************** Sketch Code ************************************/
 
@@ -201,8 +200,8 @@ void loop() {
       mqtt.disconnect(); // disconnect from MQTT. Will connect automatically in the beginning of the loop
       digitalWrite(LED_BUILTIN, HIGH);  // sets the LED if MQTT is connected
     }
-    if (! esp.publish("ping")) {  // Now we can publish stuff!
-      Serial.println(F("Updating ESP state on MQTT"));
+    if (! door.publish("ping")) {  // Now we can publish stuff!
+      Serial.println(F("Updating Door Sensor state on MQTT"));
     }
     timestamp = millis();
   }
@@ -235,7 +234,7 @@ void MQTT_connect() {
     }
   }
   Serial.println("MQTT Connected!");
-  if (! esp.publish("connected")) {  // Now we can publish stuff!
+  if (! door.publish("connected")) {  // Now we can publish stuff!
     Serial.println(F("Updating ESP state on MQTT"));
   }
   digitalWrite(LED_BUILTIN, LOW);  // sets the LED if MQTT is connected
